@@ -53,7 +53,7 @@ header {
     transition: all .3s ease-in;
 }
 
-.options a:hover, .user-area a:hover, aside a:hover {
+.options a:hover, .user-area a:hover, aside a:hover, .user-area-mobile button:hover {
     color: var(--Almost-Black);
     font-weight: 700;
 }
