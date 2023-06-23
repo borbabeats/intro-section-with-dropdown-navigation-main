@@ -1,0 +1,208 @@
+@use 'mobile';
+@use 'colors';
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+aside {
+    display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 32px;
+    max-width: 1440px;
+    margin: 0 auto;
+    
+}
+
+.options {
+    position: relative;
+    max-width: 600px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options > img {
+    margin-right: 20px;
+}
+
+.options a, .user-area a, aside a, .user-area-mobile button {
+    text-decoration: none;
+    color: colors.$Medium-Gray;
+    font-size: 1rem;
+    transition: all .3s ease-in;
+    &:hover {
+        color: colors.$Almost-Black;
+        font-weight: 700;
+    }
+}
+
+.options .arrow-up, .arrow-up-mobile {
+    display: none;
+    margin-left: 6px;
+    width: 12px;
+}
+
+.options .arrow-down, .arrow-down-mobile {
+    width: 12px;
+    margin-left: 6px;
+}
+
+header .user-area a:last-child, .user-area-mobile button {
+    border: 1px solid colors.$Almost-Black;
+    padding: 14px 18px;
+    border-radius: 14px;
+    &:hover {
+        box-shadow: 0px 2px 8px colors.$Medium-Gray;
+    }
+    
+}
+
+.user-area a {
+    margin-left: 20px;
+}
+
+@mixin toggle() {    
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 15%;
+    padding: 32px 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 16px colors.$Medium-Gray;
+    
+    ul {
+        list-style: none;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        li {
+            cursor: pointer;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            color: colors.$Medium-Gray;
+            }
+        }
+    }
+
+/*edita submenu Features*/
+.features-toggle, .features-toggle-mobile {
+    @include toggle;
+}
+
+/*submenu de company*/
+.company-toggle, .company-toggle-mobile {
+    @include toggle;
+    left: 48%;
+   
+}
+
+/*edita conteudo*/
+.container {
+    display: grid;
+    grid-template-areas: 'information banner-hero';
+    max-width: 1220px;
+    margin: 40px auto;
+    max-height: calc(80vh - 75px);
+    height: calc(80vh - 75px);
+    padding: 0 32px;
+    gap: 100px;
+}
+
+/*edita campo de informacoes*/
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;    
+    gap: 40px;
+    max-width: 450px;
+    grid-area: information;
+    /*edita titulo principal*/
+    h1 {
+        font-size: 4.25rem;
+        color: colors.$Almost-Black;
+    }
+    /*edita descricao do titulo*/
+    p {
+        color: colors.$Medium-Gray;
+        font-size: 1.125rem;
+        line-height: 28px;
+    }
+    /*edita botao abaix do titulo*/
+    button {
+        cursor: pointer;
+        width: 160px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        border: 1px solid colors.$Almost-Black;
+        outline: none;
+        background-color: colors.$Almost-Black;
+        color: colors.$Almost-White;
+        transition: all .3s ease-in-out;
+        font-size: 1.125rem;
+        &:hover {
+            color: colors.$Almost-Black;
+            background-color: colors.$Almost-White;
+            font-weight: 700;
+        }
+    }
+}
+
+/*edita secao do banner*/
+.banner-hero {
+    height: calc(80vh - 75px);
+    max-height: calc(80vh - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    grid-area: banner-hero;
+}
+
+.banner-hero-desktop {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+}
+
+.banner-hero-mobile {
+    display: none;
+}
+
+/*edita logotipo dos parceiros*/
+.logo-partners {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90%;
+    gap: 16px;
+    margin-top: 50px;
+    img {
+        width: 80px;
+        height: 25px;
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    a { 
+        color: hsl(228, 45%, 44%); 
+    }
+} 

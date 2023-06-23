@@ -1,321 +1,294 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Epilogue', sans-serif;
-}
-
-:root {
-    --Almost-White: hsl(0, 0%, 98%);
-    --Medium-Gray: hsl(0, 0%, 41%);
-    --Almost-Black: hsl(0, 0%, 8%);
-
-}
-
-body {
-    height: 100vh;
-}
-
-aside {
-    display: none;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 40px 32px;
-    max-width: 1440px;
-    margin: 0 auto;
-    
-}
-
-.options {
-    position: relative;
-    max-width: 600px;
-    width: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.options > img {
-    margin-right: 20px;
-}
-
-.options a, .user-area a, aside a, .user-area-mobile button {
-    text-decoration: none;
-    color: var(--Medium-Gray);
-    font-size: 1rem;
-    transition: all .3s ease-in;
-}
-
-.options a:hover, .user-area a:hover, aside a:hover, .user-area-mobile button:hover {
-    color: var(--Almost-Black);
-    font-weight: 700;
-}
-
-.options .arrow-up, .arrow-up-mobile {
-    display: none;
-    margin-left: 6px;
-    width: 12px;
-}
-
-.options .arrow-down, .arrow-down-mobile {
-    width: 12px;
-    margin-left: 6px;
-}
-
-header .user-area a:last-child, .user-area-mobile button {
-    border: 1px solid var(--Almost-Black);
-    padding: 14px 18px;
-    border-radius: 14px;
-    
-}
-
-.user-area a:last-child:hover, .user-area-mobile button:hover {
-    box-shadow: 0px 2px 8px var(--Medium-Gray);
-}
-
-
-.user-area a {
-    margin-left: 20px;
-}
-
-/*edita submenu Features*/
-.features-toggle, .features-toggle-mobile {
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: 15%;
-    padding: 32px 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 16px var(--Medium-Gray);
-}
-
-
-.features-toggle ul, .features-toggle-mobile ul, .company-toggle ul, .company-toggle-mobile ul{
-    list-style: none;
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.features-toggle ul li, .features-toggle-mobile ul li, .company-toggle ul li, .company-toggle-mobile ul li {
-    cursor: pointer;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    color: var(--Medium-Gray);
-}
-
-/*submenu de company*/
-.company-toggle, .company-toggle-mobile {
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: 48%;
-    padding: 32px 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px var(--Medium-Gray);
-}
-
-/*edita conteudo*/
-.container {
-    display: grid;
-    grid-template-areas: 'information banner-hero';
-    max-width: 1220px;
-    margin: 40px auto;
-    max-height: calc(80vh - 75px);
-    height: calc(80vh - 75px);
-    padding: 0 32px;
-    gap: 100px;
-}
-
-
-/*edita campo de informacoes*/
-.information {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;    
-    gap: 40px;
-    max-width: 450px;
-    grid-area: information;
-}
-
-
-/*edita secao do banner*/
-.banner-hero {
-    height: calc(80vh - 75px);
-    max-height: calc(80vh - 75px);
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    width: 100%;
-    grid-area: banner-hero;
-}
-
-.banner-hero-desktop {
-    display: flex;
-    width: fit-content;
-    height: 100%;
-}
-
-.banner-hero-mobile {
-    display: none;
-}
-
-
-/*edita titulo principal*/
-.information h1 {
-    font-size: 4.25rem;
-    color: var(--Almost-Black);
-}
-
-
-/*edita descricao do titulo*/
-.information p {
-    color: var(--Medium-Gray);
-    font-size: 1.125rem;
-    line-height: 28px;
-    
-}
-
-
-/*edita botao abaix do titulo*/
-.information button {
-    cursor: pointer;
-    width: 160px;
-    padding: 14px 18px;
-    border-radius: 14px;
-    border: 1px solid var(--Almost-Black);
-    outline: none;
-    background-color: var(--Almost-Black);
-    color: var(--Almost-White);
-    transition: all .3s ease-in-out;
-    font-size: 1.125rem;
-}
-
-.information button:hover {
-    color: var(--Almost-Black);
-    background-color: var(--Almost-White);
-    font-weight: 700;
-}
-
-
-/*edita logotipo dos parceiros*/
-.logo-partners {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 90%;
-    gap: 16px;
-    margin-top: 50px;
-}
-
-.logo-partners img {
-    width: 80px;
-    height: 25px;
-}
-
-
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
 @media screen and (max-width: 767px) {
-    .container {
-        grid-template-columns: 100%;
-        grid-template-areas: 'banner-hero'
-        'information';
-        padding: 32px 0;
-        gap: 0px;
-        height: 80%;
-        max-height: 80%;
-    }
-
-    .banner-hero-desktop {
-        display: none;
-    }
-
-    .banner-hero-mobile {
-        display: inline-block;
-    }
-
-    .banner-hero {
-        justify-content: center;
-        height: 50%;  
-    }
-
-    .information {
-        max-width: 100%;
-        align-items: center;
-        gap: 16px;
-        padding: 0 12px;
-        justify-content: center;
-    }
-
-    .information h1, .information p {
-        text-align: center;
-    }
-
-    .information h1 {
-        font-size: 2.25rem;
-    }
-
-    .options a, .user-area {
-        display: none;
-    }
-
-    aside  {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        width: 65%;
-        height: 100%;
-        background-color: var(--Almost-White);
-        padding: 32px;
-        gap: 32px;
-    }
-
-    aside .link-mobile {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    aside:before {
-        content: '';
-        width: 60%;
-        height: 100%;
-        position: absolute;
-        right: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .features-toggle-mobile, .company-toggle-mobile {
+  .container {
+    grid-template-columns: 100%;
+    grid-template-areas: "banner-hero" "information";
+    padding: 32px 0;
+    gap: 0px;
+    height: 80%;
+    max-height: 80%;
+  }
+  .banner-hero-desktop {
+    display: none;
+  }
+  .banner-hero-mobile {
+    display: inline-block;
+  }
+  .banner-hero {
+    justify-content: center;
+    height: 50%;
+  }
+  .information {
+    max-width: 100%;
+    align-items: center;
+    gap: 16px;
+    padding: 0 12px;
+    justify-content: center;
+  }
+  .information h1, .information p {
+    text-align: center;
+  }
+  .information h1 {
+    font-size: 2.25rem;
+  }
+  .options a, .user-area {
+    display: none;
+  }
+  aside {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background-color: var(--Almost-White);
+    padding: 32px;
+    gap: 32px;
+  }
+  aside .link-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  aside:before {
+    content: "";
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .features-toggle-mobile, .company-toggle-mobile {
     display: flex;
     position: relative;
     top: 0;
     left: 0;
-    padding: 32px 0px  32px 20px;
+    padding: 32px 0px 32px 20px;
     box-shadow: none;
-    }
-
-    .user-area-mobile {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 32px;
-    }
-    
-   
+  }
+  .user-area-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 32px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Epilogue", sans-serif;
 }
 
+body {
+  height: 100vh;
+}
 
+aside {
+  display: none;
+}
 
-.attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.options {
+  position: relative;
+  max-width: 600px;
+  width: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options > img {
+  margin-right: 20px;
+}
+
+.options a, .user-area a, aside a, .user-area-mobile button {
+  text-decoration: none;
+  color: hsl(0, 0%, 41%);
+  font-size: 1rem;
+  transition: all 0.3s ease-in;
+}
+.options a:hover, .user-area a:hover, aside a:hover, .user-area-mobile button:hover {
+  color: hsl(0, 0%, 8%);
+  font-weight: 700;
+}
+
+.options .arrow-up, .arrow-up-mobile {
+  display: none;
+  margin-left: 6px;
+  width: 12px;
+}
+
+.options .arrow-down, .arrow-down-mobile {
+  width: 12px;
+  margin-left: 6px;
+}
+
+header .user-area a:last-child, .user-area-mobile button {
+  border: 1px solid hsl(0, 0%, 8%);
+  padding: 14px 18px;
+  border-radius: 14px;
+}
+header .user-area a:last-child:hover, .user-area-mobile button:hover {
+  box-shadow: 0px 2px 8px hsl(0, 0%, 41%);
+}
+
+.user-area a {
+  margin-left: 20px;
+}
+
+/*edita submenu Features*/
+.features-toggle, .features-toggle-mobile {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 15%;
+  padding: 32px 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px hsl(0, 0%, 41%);
+}
+.features-toggle ul, .features-toggle-mobile ul {
+  list-style: none;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.features-toggle ul li, .features-toggle-mobile ul li {
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: hsl(0, 0%, 41%);
+}
+
+/*submenu de company*/
+.company-toggle, .company-toggle-mobile {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 15%;
+  padding: 32px 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px hsl(0, 0%, 41%);
+  left: 48%;
+}
+.company-toggle ul, .company-toggle-mobile ul {
+  list-style: none;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.company-toggle ul li, .company-toggle-mobile ul li {
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: hsl(0, 0%, 41%);
+}
+
+/*edita conteudo*/
+.container {
+  display: grid;
+  grid-template-areas: "information banner-hero";
+  max-width: 1220px;
+  margin: 40px auto;
+  max-height: calc(80vh - 75px);
+  height: calc(80vh - 75px);
+  padding: 0 32px;
+  gap: 100px;
+}
+
+/*edita campo de informacoes*/
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 40px;
+  max-width: 450px;
+  grid-area: information;
+  /*edita titulo principal*/
+  /*edita descricao do titulo*/
+  /*edita botao abaix do titulo*/
+}
+.information h1 {
+  font-size: 4.25rem;
+  color: hsl(0, 0%, 8%);
+}
+.information p {
+  color: hsl(0, 0%, 41%);
+  font-size: 1.125rem;
+  line-height: 28px;
+}
+.information button {
+  cursor: pointer;
+  width: 160px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid hsl(0, 0%, 8%);
+  outline: none;
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 98%);
+  transition: all 0.3s ease-in-out;
+  font-size: 1.125rem;
+}
+.information button:hover {
+  color: hsl(0, 0%, 8%);
+  background-color: hsl(0, 0%, 98%);
+  font-weight: 700;
+}
+
+/*edita secao do banner*/
+.banner-hero {
+  height: calc(80vh - 75px);
+  max-height: calc(80vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  grid-area: banner-hero;
+}
+
+.banner-hero-desktop {
+  display: flex;
+  width: fit-content;
+  height: 100%;
+}
+
+.banner-hero-mobile {
+  display: none;
+}
+
+/*edita logotipo dos parceiros*/
+.logo-partners {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 90%;
+  gap: 16px;
+  margin-top: 50px;
+}
+.logo-partners img {
+  width: 80px;
+  height: 25px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=style.css.map */
